@@ -1,0 +1,125 @@
+---
+	import Header from "../components/Header.astro";
+	export interface Props {
+		title: string;
+	}
+
+	const { title } = Astro.props as Props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description"
+		content="👋🏻 I'm Michael but some people call me my. I love to create order. I am a 👨🏻‍🌾 human bean and software engineer." />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Pacifico|Merriweather&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+		integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+		crossorigin="anonymous" referrerPolicy="no-referrer" />
+	<title>{title}</title>
+</head>
+
+<body>
+	<Header />
+	<main>
+		<slot />
+	</main>
+</body>
+
+</html>
+<style is:global>
+	* {
+		box-sizing: border-box;
+	}
+
+	html,
+	body {
+		height: 100%;
+		min-height: 100%;
+	}
+
+	body {
+		/* background: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.text};
+    font-family: ${({ theme }) => theme.fonts.body};
+    font-size: ${({ theme }) => theme.fontSizes[3]}px;
+    line-height: ${({ theme }) => theme.lineHeights.body}; */
+		background: #fff;
+		color: #212529;
+		font-family: "Merriweather", serif;
+		font-size: 18px;
+		line-height: 1.75;
+		margin: 0;
+	}
+
+	a {
+		/* color: ${({ theme }) => theme.colors.primary}; */
+		color: #00f;
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		/* font-family: ${({ theme }) => theme.fonts.header}; */
+		font-family: "Open Sans", sans-serif;
+		font-weight: bold;
+		margin-top: 0;
+	}
+
+	h1 {
+		/* font-size: ${({ theme }) => theme.fontSizes[5]}px; */
+		font-size: 32px;
+	}
+
+	h1 span {
+		font-family: "Pacifico", serif;
+		display: inline-block;
+		padding-right: 5px;
+	}
+
+	hr {
+		border: none;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+
+	main {
+		/* padding: ${({ theme }) => theme.space[4]}px; */
+		padding: 32px;
+		margin: 0 auto;
+		/* max-width: ${({ theme }) => theme.sizes.maxWidth}; */
+		max-width: 768px;
+		--webkit-overflow-scrolling: touch;
+	}
+
+	/* TODO: get rid of this */
+	small {
+		font-size: 1rem;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+</style>
