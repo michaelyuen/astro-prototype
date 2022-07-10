@@ -1,5 +1,6 @@
 ---
 layout: ../layouts/Layout.astro
+title: Michael Yuen's Personal Website
 ---
 
 # <span>my</span>Bio

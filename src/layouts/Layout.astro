@@ -1,10 +1,12 @@
 ---
 	import Header from "../components/Header.astro";
 	export interface Props {
-		title: string;
+		content: {
+			title: string;
+		};
 	}
 
-	const { title } = Astro.props as Props;
+	const { content } = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -21,7 +23,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
 		integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
 		crossorigin="anonymous" referrerPolicy="no-referrer" />
-	<title>{title}</title>
+	<title>{content.title}</title>
 </head>
 
 <body>
